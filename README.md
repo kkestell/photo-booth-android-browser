@@ -1,2 +1,2 @@
-# Photo Booth Android
+# Photo Booth Android Browser
 
