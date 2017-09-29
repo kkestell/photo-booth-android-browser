@@ -1,4 +1,4 @@
-package org.kestell.photobooth;
+package org.kestell.photoboothbrowser;
 
 public class Photo {
     private String filename;

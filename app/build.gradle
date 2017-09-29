@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "org.kestell.photobooth"
+        applicationId "org.kestell.photoboothbrowser"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

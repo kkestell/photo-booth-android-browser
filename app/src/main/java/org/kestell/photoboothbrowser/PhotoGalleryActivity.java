@@ -1,4 +1,4 @@
-package org.kestell.photobooth;
+package org.kestell.photoboothbrowser;
 
 import android.content.Intent;
 import android.os.Handler;

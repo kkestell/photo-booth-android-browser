@@ -1,4 +1,4 @@
-package org.kestell.photobooth;
+package org.kestell.photoboothbrowser;
 
 import android.content.Context;
 import android.view.LayoutInflater;

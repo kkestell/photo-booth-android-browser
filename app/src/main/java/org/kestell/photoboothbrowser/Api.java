@@ -1,4 +1,4 @@
-package org.kestell.photobooth;
+package org.kestell.photoboothbrowser;
 
 import java.util.List;
 import okhttp3.OkHttpClient;
