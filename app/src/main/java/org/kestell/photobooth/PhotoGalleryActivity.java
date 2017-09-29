@@ -25,7 +25,7 @@ public class PhotoGalleryActivity extends AppCompatActivity implements OnLoadPho
             try {
                 updatePhotos();
             } finally {
-                handler.postDelayed(photoUpdater, 5000);
+                handler.postDelayed(photoUpdater, 60000);
             }
         }
     };
