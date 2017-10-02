@@ -8,6 +8,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public class Api {
     public static String BASE_URL = "http://10.0.0.1:4567";
@@ -17,6 +19,9 @@ public class Api {
     public interface ApiClient {
         @GET("/photos")
         Call<List<Photo>> listPhotos();
+
+        @POST("/photos/{filename}/prints")
+        Call<Void> printPhoto(@Path("filename") String filename);
     }
 
     public Api() {
@@ -29,6 +34,22 @@ public class Api {
         Retrofit retrofit = builder.client(httpClient.build()).build();
 
         client = retrofit.create(ApiClient.class);
+    }
+
+    public void printPhoto(String filename, final OnPrintPhotoListener listener) {
+        Call<Void> call = client.printPhoto(filename);
+
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                listener.OnPrintPhotoSuccess();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                listener.OnPrintPhotoError();
+            }
+        });
     }
 
     public void loadPhotos(final OnLoadPhotosListener listener) {
